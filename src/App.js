@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import CryptographicRandomNumberGenerator from './CryptographicRandomNumberGenerator';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Cryptographic Random Number Generator'; // Change the title when the component mounts
+    return () => {
+      document.title = 'React App'; // Restore the previous title when the component unmounts
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CryptographicRandomNumberGenerator />
+      <h5>&copy;2023 | Cryptographic RandomNumber Generator</h5>
     </div>
   );
 }
