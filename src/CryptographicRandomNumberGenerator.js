@@ -45,15 +45,16 @@ function CryptographicRandomNumberGenerator() {
       <h2 className="title">Cryptographic Random Number Generator</h2>
       <div className="content-container">
         <div className="input-container">
-          <label htmlFor="input" className="label">Enter a value:</label>
+          <label htmlFor="input" className="label"><b>Enter a value:</b></label>
           <input type="text" id="input" value={input} onChange={handleInputChange} className="input" />
         </div>
 
         <button onClick={handleGenerateRandomNumbers} className="button">Generate Random Numbers</button>
-
-        {trueRandomNum && <p className="result">True Random Number: {trueRandomNum}</p>}
-        {pseudoRandomNum && <p className="result">Pseudo Random Number: {pseudoRandomNum}</p>}
-        {hybridRandomNum && <p className="result">Hybrid Random Number: {hybridRandomNum}</p>}
+        <br/>
+        
+        {trueRandomNum && <p className="result"> <span className='rng1'>The random numbers for "<u>{input}</u>" are:</span><br/><br/><span className="rng">True Random Number:</span> {trueRandomNum}</p>}
+        {pseudoRandomNum && <p className="result"><span className="rng">Pseudo Random Number: </span>{pseudoRandomNum}</p>}
+        {hybridRandomNum && <p className="result"><span className="rng">Hybrid Random Number: </span>{hybridRandomNum}</p>}
       </div>
 
       
@@ -62,6 +63,12 @@ function CryptographicRandomNumberGenerator() {
           text-align: center;
           margin-top: 50px;
           font-size: 120%;
+        }
+        .rng {
+          color:green;
+        }
+        .rng1 {
+          color:black;
         }
 
         .title {
@@ -117,7 +124,7 @@ function CryptographicRandomNumberGenerator() {
         .result {
           margin-top: 20px;
           font-size: 120%;
-          color: green;
+          color: blue;
           font-weight: bold;
         }
       `}</style>
